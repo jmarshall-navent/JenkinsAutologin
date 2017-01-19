@@ -25,3 +25,10 @@ print r2.json()
 
 accesTokenAutologin = r2.json()['token']
 print accesTokenAutologin
+
+
+endpointEmpresasAutologin = "https://developers.zonajobs.com/v0/application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
+
+r3 = requests.post(endpointEmpresasAutologin, headers = headers, verify = False)
+print r3
+print r3.json()
