@@ -1,7 +1,11 @@
 import requests
 import json
+import os
 
-def getAccessTokenEmpresaAutologin( idEmpresa , portal):
+def getAccessTokenEmpresaAutologin( ):
+  idEmpresa = os.environ('ID_EMPRESA')
+  portal = os.enviroment('PORTAL')
+  
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
   basepath = " https://developers." + portal + ".com/v0/"
   
