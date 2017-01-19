@@ -8,3 +8,4 @@ url = "https://developers.zonajobs.com/v0/application/oauth2/login?grant_type=cl
 r = requests.post(url, headers = headers, verify = False)
 
 print r
+print r.json()
