@@ -4,7 +4,7 @@ import os
 
 def getAccessTokenEmpresaAutologin( ):
   idEmpresa = os.environ['ID_EMPRESA']
-  ambiente = os.envirot['AMBIENTE']
+  ambiente = os.environ['AMBIENTE']
   
   ambientesUrl = {"bm-qa" :  "apiqa.navent.com" , "bm-sandbox" : "https://developers.bumeran.com" ,  "bm-lite" : "192.168.120.212:8080", "zj-sandbox" : "https://developers.zonajobs.com"}
   
