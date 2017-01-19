@@ -6,6 +6,9 @@ def getAccessTokenEmpresaAutologin( ):
   idEmpresa = os.environ['ID_EMPRESA']
   ambiente = os.environ['AMBIENTE']
   
+  print idEmpresa
+  print ambiente
+  
   ambientesUrl = {"bm-qa" :  "apiqa.navent.com" , "bm-sandbox" : "https://developers.bumeran.com" ,  "bm-lite" : "192.168.120.212:8080", "zj-sandbox" : "https://developers.zonajobs.com"}
   
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
