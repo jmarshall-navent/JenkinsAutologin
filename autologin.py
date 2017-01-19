@@ -7,7 +7,7 @@ def getAccessTokenEmpresaAutologin( ):
   portal = os.environ['PORTAL']
   
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
-  basepath = " https://developers." + portal + ".com/v0/"
+  basepath = "https://developers." + portal + ".com/v0/"
   
   url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=api-developer&client_secret=secret"
   r = requests.post(url, headers = headers, verify = False)
