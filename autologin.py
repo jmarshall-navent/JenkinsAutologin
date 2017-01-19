@@ -21,3 +21,7 @@ usuario = {'usuarioId': 543287}
 r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = json.dumps(usuario))
 print r2
 print r2.json()
+
+
+accesTokenAutologin = r2.json()['token']
+print accessTokenAutologin
