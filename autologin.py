@@ -24,4 +24,4 @@ print r2.json()
 
 
 accesTokenAutologin = r2.json()['token']
-print accessTokenAutologin
+print accesTokenAutologin
