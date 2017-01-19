@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-def getAccessTokenEmpresaAutologin( ):
+def getAccessTokenEmpresaAutologin():
   idEmpresa = os.environ['ID_EMPRESA']
   ambiente = os.environ['AMBIENTE']
   
