@@ -42,7 +42,7 @@ def getAccessTokenEmpresaAutologin( ):
   print r3
   empresaToken = r3.json()['access_token']
   print '\n \n \n '
-  print "acces_token para la empresa con id: " + idEmpresa + " y portal: " + portal
+  print "acces_token para la empresa con id: " + idEmpresa + " y ambiente: " + ambiente
   print '\n '
   print empresaToken
   print '\n '
