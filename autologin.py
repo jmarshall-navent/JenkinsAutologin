@@ -30,4 +30,6 @@ endpointEmpresasAutologin = "https://developers.zonajobs.com/v0/application/empr
 r3 = requests.post(endpointEmpresasAutologin, headers = headers, verify = False)
 
 empresaToken = r3.json()['access_token']
+print '\n \n \n '
+print "acces_token para la empresa con id : "
 print empresaToken
