@@ -9,7 +9,7 @@ def getAccessTokenEmpresaAutologin( ):
   ambientesUrl = {"bm-qa" :  "apiqa.navent.com" , "bm-sandbox" : "https://developers.bumeran.com" ,  "bm-lite" : "192.168.120.212:8080", "zj-sandbox" : "https://developers.zonajobs.com"}
   
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
-  basepath = ambientesUrl[ambeinte] + "/v0/"
+  basepath = ambientesUrl[ambiente] + "/v0/"
   
   url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=api-developer&client_secret=secret"
   r = requests.post(url, headers = headers, verify = False)
