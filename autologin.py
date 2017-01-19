@@ -8,27 +8,26 @@ endpoint = "https://developers.zonajobs.com/v0/application/oauth2/login"
 url = "https://developers.zonajobs.com/v0/application/oauth2/login?grant_type=client_credentials&client_id=api-developer&client_secret=secret"
 r = requests.post(url, headers = headers, verify = False)
 
-print r
-print r.json()
+
 
 accessTokenApp = r.json()['access_token']
-print accessTokenApp
+
 
 
 endpointEmpresasToken = "https://developers.zonajobs.com/v0/application/empresas/token?access_token=" + accessTokenApp
 usuario = {'usuarioId': 543287} 
 
 r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = json.dumps(usuario))
-print r2
-print r2.json()
+
 
 
 accesTokenAutologin = r2.json()['token']
-print accesTokenAutologin
+
 
 
 endpointEmpresasAutologin = "https://developers.zonajobs.com/v0/application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
 
 r3 = requests.post(endpointEmpresasAutologin, headers = headers, verify = False)
-print r3
-print r3.json()
+
+empresaToken = r3.json()['access_token']
+print empresaToken
