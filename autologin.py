@@ -15,6 +15,7 @@ def getAccessTokenEmpresaAutologin( ):
   basepath = ambientesUrl[ambiente] + "/v0/"
   
   url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=api-developer&client_secret=secret"
+  print url
   r = requests.post(url, headers = headers, verify = False)
 
   print r
@@ -25,7 +26,7 @@ def getAccessTokenEmpresaAutologin( ):
 
   endpointEmpresasToken = basepath + "application/empresas/token?access_token=" + accessTokenApp
   usuario = {'usuarioId': idEmpresa} 
-
+  print endpointEmpresasToken
   r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = json.dumps(usuario))
 
   print r2
