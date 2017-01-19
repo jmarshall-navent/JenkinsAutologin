@@ -4,7 +4,7 @@ import os
 
 def getAccessTokenEmpresaAutologin( ):
   idEmpresa = os.environ['ID_EMPRESA']
-  portal = os.enviroment['PORTAL']
+  portal = os.environ['PORTAL']
   
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
   basepath = " https://developers." + portal + ".com/v0/"
