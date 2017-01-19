@@ -15,8 +15,8 @@ print accessTokenApp
 
 
 endpointEmpresasToken = "https://developers.zonajobs.com/v0/application/empresas/token?access_token=" + accessTokenApp
-data = {'usuarioId': 543287}
 
-r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = data )
+
+r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = {'usuarioId': 543287} )
 print r2
 print r2.json()
