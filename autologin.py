@@ -9,3 +9,6 @@ r = requests.post(url, headers = headers, verify = False)
 
 print r
 print r.json()
+
+accessTokenApp = r.json()['access_token']
+print accessTokenApp
