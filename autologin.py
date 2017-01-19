@@ -19,7 +19,8 @@ def getAccessTokenEmpresaAutologin():
   r = requests.post(url, headers = headers, verify = False)
 
   print r
-
+  if(r.status_code >= 300):
+    break;
   accessTokenApp = r.json()['access_token']
 
 
@@ -30,6 +31,8 @@ def getAccessTokenEmpresaAutologin():
   r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = json.dumps(usuario))
 
   print r2
+  if(r2.status_code >= 300):
+    break;
 
   accesTokenAutologin = r2.json()['token']
 
@@ -40,6 +43,9 @@ def getAccessTokenEmpresaAutologin():
   r3 = requests.post(endpointEmpresasAutologin, headers = headers, verify = False)
 
   print r3
+  if(r3.status_code >= 300):
+    break;
+    
   empresaToken = r3.json()['access_token']
   print '\n \n \n '
   print "acces_token para la empresa con id: " + idEmpresa + " y ambiente: " + ambiente
