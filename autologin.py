@@ -44,7 +44,7 @@ def getAccessTokenEmpresaAutologin():
   print accessTokenAutologin
 
   if(usuario == "Empresa"):
-      print usuario
+    print usuario
     endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
   else:
     endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
