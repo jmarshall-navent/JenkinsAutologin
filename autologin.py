@@ -31,9 +31,9 @@ def getAccessTokenEmpresaAutologin():
     endpointToken = basepath + "application/empresas/token?access_token=" + accessTokenApp
   else:
     endpointToken = basepath + "application/postulantes/token?acces_token" + accessTokenApp
-  usuario = {'usuarioId': idUsuario} 
+  usuarioId = {'usuarioId': idUsuario} 
   print endpointToken
-  r2 = requests.post(endpointToken, headers = headers, verify = False, data = json.dumps(usuario))
+  r2 = requests.post(endpointToken, headers = headers, verify = False, data = json.dumps(usuarioId))
 
   print r2
   if(r2.status_code >= 300):
