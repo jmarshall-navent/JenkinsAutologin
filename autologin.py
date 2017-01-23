@@ -68,7 +68,7 @@ def getAccessTokenEmpresaAutologin():
   if(usuario == "Empresa"):
     print "acces_token para la empresa con id: " + idUsuario + " y ambiente: " + ambiente
   else:
-    print "access_token para el postulante con id: " + idUsuario + " y ambeinte: " + ambiente
+    print "access_token para el postulante con id: " + idUsuario + " y ambiente: " + ambiente
   print '\n '
   print token
   print '\n '
