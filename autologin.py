@@ -25,6 +25,7 @@ def getAccessTokenEmpresaAutologin():
     print r.json()['error_description']
     return
   accessTokenApp = r.json()['access_token']
+  print accessTokenApp
 
 
   if(usuario == "Empresa"):
