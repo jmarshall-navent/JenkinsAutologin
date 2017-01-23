@@ -3,12 +3,14 @@ import json
 import os
 
 def getAccessTokenEmpresaAutologin():
-  idEmpresa = os.environ['ID_EMPRESA']
+  idUsuario = os.environ['ID']
   ambiente = os.environ['AMBIENTE']
+  usuario = os.environ['USUARIO']
   
-  print idEmpresa
+  print idUsuario
   print ambiente
-  
+  print usuario
+
   ambientesUrl = {"bm-produccion" :  "https://api.bumeran.com" ,"zj-produccion" : "https://api.zonajobs.com.ar" , "bm-sandbox" : "https://developers.bumeran.com" ,  "bm-lite" : "http://192.168.120.212:8080", "zj-sandbox" : "https://developers.zonajobs.com"}
   
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
@@ -25,11 +27,13 @@ def getAccessTokenEmpresaAutologin():
   accessTokenApp = r.json()['access_token']
 
 
-
-  endpointEmpresasToken = basepath + "application/empresas/token?access_token=" + accessTokenApp
-  usuario = {'usuarioId': idEmpresa} 
-  print endpointEmpresasToken
-  r2 = requests.post(endpointEmpresasToken, headers = headers, verify = False, data = json.dumps(usuario))
+  if(usuario == "Empresa"):
+    endpointToken = basepath + "application/empresas/token?access_token=" + accessTokenApp
+  else:
+    endpointToken = basepath + "application/postulantes/token?acces_token" + accessTokenApp
+  usuario = {'usuarioId': idUsuario} 
+  print endpointToken
+  r2 = requests.post(endpointToken, headers = headers, verify = False, data = json.dumps(usuario))
 
   print r2
   if(r2.status_code >= 300):
@@ -39,9 +43,11 @@ def getAccessTokenEmpresaAutologin():
   accesTokenAutologin = r2.json()['token']
 
 
-
-  endpointEmpresasAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
-
+  if(usuario == "Empresa"):
+    endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
+  else:
+    endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
+  
   r3 = requests.post(endpointEmpresasAutologin, headers = headers, verify = False)
 
   print r3
@@ -49,10 +55,13 @@ def getAccessTokenEmpresaAutologin():
     print r3.status_code
     return
     
-  empresaToken = r3.json()['access_token']
+  token = r3.json()['access_token']
   print '\n \n \n '
-  print "acces_token para la empresa con id: " + idEmpresa + " y ambiente: " + ambiente
+  if(usuario == "Empresa"):
+    print "acces_token para la empresa con id: " + idUsuario + " y ambiente: " + ambiente
+  else:
+    print "access_token para el postulante con id: " + idUsuario + " y ambeinte: " + ambiente
   print '\n '
-  print empresaToken
+  print token
   print '\n '
   print '\n '
