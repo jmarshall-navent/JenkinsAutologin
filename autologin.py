@@ -6,6 +6,8 @@ def getAccessTokenEmpresaAutologin():
   idUsuario = os.environ['ID']
   ambiente = os.environ['AMBIENTE']
   usuario = os.environ['USUARIO']
+  clientSecret = os.environ['CLIENTE_SECRET']
+  clientId = os.environ['CLIENT_ID']
   
   print idUsuario
   print ambiente
@@ -15,7 +17,7 @@ def getAccessTokenEmpresaAutologin():
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
   basepath = ambientesUrl[ambiente] + "/v0/"
   
-  url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=api-developer&client_secret=secret"
+  url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=" + clientId + "&client_secret=" clientSecret
   print url
   r = requests.post(url, headers = headers, verify = False)
 
@@ -50,9 +52,9 @@ def getAccessTokenEmpresaAutologin():
 
   if(usuario == "Empresa"):
     print usuario
-    endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
+    endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=" + clientId + "&client_secret=" + clientSecret + "&token=" + accessTokenAutologin
   else:
-    endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
+    endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=" + clientId + "&client_secret=" + clientSecret + "&token=" + accessTokenAutologin
   
   print endpointAutologin
   r3 = requests.post(endpointAutologin, headers = headers, verify = False)
