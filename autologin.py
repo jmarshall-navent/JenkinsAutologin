@@ -53,6 +53,7 @@ def getAccessTokenEmpresaAutologin():
   print r3
   if(r3.status_code >= 300):
     print r3.status_code
+    print r3.json()
     return
     
   token = r3.json()['access_token']
