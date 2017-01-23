@@ -48,6 +48,7 @@ def getAccessTokenEmpresaAutologin():
   else:
     endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
   
+  print endpointAutologin
   r3 = requests.post(endpointAutologin, headers = headers, verify = False)
 
   print r3
