@@ -27,7 +27,7 @@ def getAccessTokenEmpresaAutologin():
 
 
   if(usuario == "Empresa"):
-      print usuario
+    print usuario
     endpointToken = basepath + "application/empresas/token?access_token=" + accessTokenApp
   else:
     endpointToken = basepath + "application/postulantes/token?acces_token" + accessTokenApp
