@@ -34,7 +34,7 @@ def getAccessTokenEmpresaAutologin():
     usuarioId = {'usuarioId': idUsuario} 
   else:
     print usuario
-    endpointToken = basepath + "application/postulantes/token?acces_token=" + accessTokenApp
+    endpointToken = basepath + "application/postulantes/token?access_token=" + accessTokenApp
     usuarioId = {"postulanteId": idUsuario} 
   print endpointToken
   r2 = requests.post(endpointToken, headers = headers, verify = False, data = json.dumps(usuarioId))
