@@ -17,7 +17,7 @@ def getAccessTokenEmpresaAutologin():
   headers = {'Content-type' : 'application/json', 'Accept' : 'application/json'}
   basepath = ambientesUrl[ambiente] + "/v0/"
   
-  url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=" + clientId + "&client_secret=" clientSecret
+  url = basepath + "application/oauth2/login?grant_type=client_credentials&client_id=" + clientId + "&client_secret=" + clientSecret
   print url
   r = requests.post(url, headers = headers, verify = False)
 
