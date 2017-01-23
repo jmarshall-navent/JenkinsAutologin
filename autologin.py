@@ -40,7 +40,7 @@ def getAccessTokenEmpresaAutologin():
     print r2.status_code
     return
 
-  accesTokenAutologin = r2.json()['token']
+  accessTokenAutologin = r2.json()['token']
   print accessTokenAutologin
 
   if(usuario == "Empresa"):
