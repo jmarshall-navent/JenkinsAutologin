@@ -6,7 +6,7 @@ def getAccessTokenEmpresaAutologin():
   idUsuario = os.environ['ID']
   ambiente = os.environ['AMBIENTE']
   usuario = os.environ['USUARIO']
-  clientSecret = os.environ['CLIENTE_SECRET']
+  clientSecret = os.environ['CLIENT_SECRET']
   clientId = os.environ['CLIENT_ID']
   
   print idUsuario
