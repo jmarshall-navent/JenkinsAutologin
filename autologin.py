@@ -12,8 +12,8 @@ def getAccessTokenEmpresaAutologin():
   print idUsuario
   print ambiente
   print usuario
-  print clienteSecret
-  print clienteId
+  print clientSecret
+  print clientId
 
   ambientesUrl = {"bm-produccion" :  "https://api.bumeran.com" ,"zj-produccion" : "https://api.zonajobs.com.ar" , "bm-sandbox" : "https://developers.bumeran.com" ,  "bm-lite" : "http://192.168.120.212:8080", "zj-sandbox" : "https://developers.zonajobs.com"}
   
