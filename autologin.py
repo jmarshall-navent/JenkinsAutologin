@@ -41,12 +41,12 @@ def getAccessTokenEmpresaAutologin():
     return
 
   accesTokenAutologin = r2.json()['token']
-
+  print accessTokenAutologin
 
   if(usuario == "Empresa"):
-    endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
+    endpointAutologin = basepath + "application/empresas/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
   else:
-    endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accesTokenAutologin
+    endpointAutologin = basepath + "application/postulantes/autologin?grant_type=autologin&client_id=api-developer&client_secret=secret&token=" + accessTokenAutologin
   
   print endpointAutologin
   r3 = requests.post(endpointAutologin, headers = headers, verify = False)
